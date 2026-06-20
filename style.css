@@ -12,9 +12,9 @@
   --bg-card2: #131313;
   --border: #1a1a1a;
   --border-rift: #39ff6a28;
-  --text: #d8d8d8;
-  --text-muted: #999;
-  --text-dim: #555;
+  --text: #e8e8e8;
+  --text-muted: #b8b8b8;
+  --text-dim: #777;
   --warn: #c49a4a;
   --warn-bg: #1c1200;
   --sidebar-w: 160px;
@@ -23,7 +23,7 @@
   --font-body: 'Inter', sans-serif;
 }
 
-html, body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+html, body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 17px; line-height: 1.6; min-height: 100vh; }
 a { color: inherit; text-decoration: none; }
 
 /* === LAYOUT === */
