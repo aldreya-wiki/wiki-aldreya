@@ -16,30 +16,43 @@
 .category-title.pokemon svg { stroke: #5ab4ff; }
 .category-title.factions svg { stroke: var(--gold); }
 
-.tomb-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
+/* === TOMB CARD : layout deux colonnes === */
+.tomb-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; display: flex; flex-direction: row; min-height: 200px; }
 .tomb-card.pokemon { border-color: #0a1f3d; }
 .tomb-card.faction { border-color: #2a1f00; }
 
-.tomb-header { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 0.5px solid var(--border); }
+/* Colonne gauche : nom + épitaphe + corps */
+.tomb-left { flex: 1; min-width: 0; display: flex; flex-direction: column; border-right: 0.5px solid var(--border); }
+.tomb-card.pokemon .tomb-left { border-right-color: #0a1f3d; }
+.tomb-card.faction .tomb-left { border-right-color: #2a1f00; }
+
+.tomb-header { padding: 1.25rem 1.25rem 0.875rem; border-bottom: 0.5px solid var(--border); }
 .tomb-card.pokemon .tomb-header { border-bottom-color: #0a1f3d; }
 .tomb-card.faction .tomb-header { border-bottom-color: #2a1f00; }
 
-.tomb-img-placeholder { width: 64px; min-width: 64px; height: 64px; border-radius: 8px; border: 0.5px dashed var(--rift-dim); background: var(--rift-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-family: var(--font-mono); font-size: 7px; color: var(--rift-dim); text-align: center; }
-.tomb-card.pokemon .tomb-img-placeholder { border-color: #1a3a6a; background: #00122a; color: #1a3a6a; }
-.tomb-card.faction .tomb-img-placeholder { border-color: #3a2a10; background: #1c1200; color: #3a2a10; }
-.tomb-img-placeholder svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
-.tomb-img { width: 64px; min-width: 64px; height: 64px; border-radius: 8px; object-fit: cover; border: 0.5px solid var(--border); }
-
-.tomb-meta { flex: 1; min-width: 0; }
-.tomb-name { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: 0.03em; margin-bottom: 3px; }
+.tomb-name { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: 0.03em; margin-bottom: 4px; }
 .tomb-card.pokemon .tomb-name { color: #7dd3fc; }
 .tomb-card.faction .tomb-name { color: var(--gold); }
 .tomb-epitaph { font-size: 13px; color: var(--text-muted); line-height: 1.6; font-style: italic; }
 
-.tomb-body { padding: 1rem 1.25rem; }
+.tomb-body { padding: 1rem 1.25rem; flex: 1; }
 .tomb-body p { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
 .tomb-body p:last-child { margin-bottom: 0; }
 .tomb-body strong { color: var(--text); font-weight: 500; }
+
+/* Colonne droite : image grande */
+.tomb-img-wrap { width: 300px; min-width: 300px; position: relative; background: #0a0a0a; overflow: hidden; }
+.tomb-card.pokemon .tomb-img-wrap { background: #020d1c; }
+.tomb-card.faction .tomb-img-wrap { background: #0e0900; }
+
+.tomb-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; opacity: 0.92; transition: opacity 0.3s ease; }
+.tomb-card:hover .tomb-img { opacity: 1; }
+
+/* Placeholder si pas d'image */
+.tomb-img-placeholder { width: 100%; height: 100%; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-family: var(--font-mono); font-size: 8px; color: var(--rift-dim); text-align: center; }
+.tomb-card.pokemon .tomb-img-placeholder { color: #1a3a6a; }
+.tomb-card.faction .tomb-img-placeholder { color: #3a2a10; }
+.tomb-img-placeholder svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.5; }
 
 .last-words { border-left: 2px solid var(--rift-dim); background: var(--rift-dark); padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; margin-top: 0.875rem; font-size: 13px; color: #a8d8b8; line-height: 1.7; font-style: italic; }
 .tomb-card.pokemon .last-words { border-left-color: #1a3a6a; background: #00122a; color: #5ab4ff; }
@@ -101,120 +114,154 @@
 
     <!-- Lucian Drevos -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/lucian-drevos.png" alt="Lucian Drevos" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Lucian Drevos</div>
           <div class="tomb-epitaph">Fondateur et chef de la Team Galaxy. Mort en sacrifice pour sauver la région qu'il avait autrefois voulu refaçonner.</div>
         </div>
+        <div class="tomb-body">
+          <p>Lucian Drevos accepta pleinement le jugement du dieu renégat. Il choisit de porter sa responsabilité et demeura dans le Monde Distorsion, en quête de rédemption. Le temps s'y écoulant dans tous les sens, il y passa ce qui lui sembla des millénaires, finissant par regretter sincèrement ses actes.</p>
+          <p>Le Banni lui accorda de sortir pour réparer ses erreurs. Il s'y consacra de tout son cœur. Dans un ultime sacrifice pour sauver les habitants d'Aldreya, il fonça sur Harrisson pour en finir une bonne fois pour toutes, ce qui lui coûta la vie, un coup du puissant Hoopa en plein abdomen. Il s'excusa une dernière fois, puis ferma les yeux à tout jamais.</p>
+          <div class="last-words">Certains l'ont compris, d'autres non. Certains l'ont pardonné, certains non. Mais il ne pourra plus rien y faire à présent.</div>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Lucian Drevos accepta pleinement le jugement du dieu renégat. Il choisit de porter sa responsabilité et demeura dans le Monde Distorsion, en quête de rédemption. Le temps s'y écoulant dans tous les sens, il y passa ce qui lui sembla des millénaires, finissant par regretter sincèrement ses actes.</p>
-        <p>Le Banni lui accorda de sortir pour réparer ses erreurs. Il s'y consacra de tout son cœur. Dans un ultime sacrifice pour sauver les habitants d'Aldreya, il fonça sur Harrisson pour en finir une bonne fois pour toutes, ce qui lui coûta la vie, un coup du puissant Hoopa en plein abdomen. Il s'excusa une dernière fois, puis ferma les yeux à tout jamais.</p>
-        <div class="last-words">Certains l'ont compris, d'autres non. Certains l'ont pardonné, certains non. Mais il ne pourra plus rien y faire à présent.</div>
+      <div class="tomb-img-wrap">
+        <img src="images/lucian-drevos.png" alt="Lucian Drevos" class="tomb-img">
       </div>
     </div>
 
     <!-- Harrisson Wilfred -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/harrisson-wilfred.png" alt="Harrisson Wilfred" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Harrisson Wilfred</div>
           <div class="tomb-epitaph">Membre de la Team Galaxy. Sombra dans la folie en croyant devenir l'égal d'un dieu.</div>
         </div>
+        <div class="tomb-body">
+          <p>Harrisson Wilfred sombra dans la folie en croyant devenir l'égal d'un dieu. Giratina le condamna à une éternité de supplices, punition de son arrogance démesurée.</p>
+          <div class="last-words">En traversant l'éternité, j'ai trouvé un règne de solitude. Ma folie m'a rendu sain. Je ne ressens plus ni la faim, ni le sommeil. Oui… j'en suis devenu sain. Terriblement sain. Et irrémédiablement seul.</div>
+          <p style="margin-top:0.875rem;">Après être revenu parmi les vivants grâce aux pouvoirs de Hoopa, il sema doutes, peur, colère et tristesse dans le cœur de nombreux habitants. Il fut finalement scellé dans la bouteille ayant autrefois contenu les pouvoirs obscurs de Hoopa, grâce au sacrifice de Lucian Drevos et à l'aide de tous les dresseurs courageux de la région.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Harrisson Wilfred sombra dans la folie en croyant devenir l'égal d'un dieu. Giratina le condamna à une éternité de supplices, punition de son arrogance démesurée.</p>
-        <div class="last-words">En traversant l'éternité, j'ai trouvé un règne de solitude. Ma folie m'a rendu sain. Je ne ressens plus ni la faim, ni le sommeil. Oui… j'en suis devenu sain. Terriblement sain. Et irrémédiablement seul.</div>
-        <p style="margin-top:0.875rem;">Après être revenu parmi les vivants grâce aux pouvoirs de Hoopa, il sema doutes, peur, colère et tristesse dans le cœur de nombreux habitants. Il fut finalement scellé dans la bouteille ayant autrefois contenu les pouvoirs obscurs de Hoopa, grâce au sacrifice de Lucian Drevos et à l'aide de tous les dresseurs courageux de la région.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/harrisson-wilfred.png" alt="Harrisson Wilfred" class="tomb-img">
       </div>
     </div>
 
     <!-- Lys Kruger -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/lys-kruger.png" alt="Lys Kruger" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Lys Kruger</div>
           <div class="tomb-epitaph">En son honneur, l'hôpital de la région porte son nom.</div>
         </div>
+        <div class="tomb-body">
+          <p>Une femme qui a toujours fait passer ses idéaux et les autres avant elle-même. Tombée lors de la tentative de libération de la Résistance au QG de la Team Rocket à Kanto, elle aura poursuivi ses convictions jusqu'à ce qu'elles la conduisent à sa propre fin.</p>
+          <div class="last-words">Mon corps tombe, mais mes convictions restent debout.</div>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Une femme qui a toujours fait passer ses idéaux et les autres avant elle-même. Tombée lors de la tentative de libération de la Résistance au QG de la Team Rocket à Kanto, elle aura poursuivi ses convictions jusqu'à ce qu'elles la conduisent à sa propre fin.</p>
-        <div class="last-words">Mon corps tombe, mais mes convictions restent debout.</div>
+      <div class="tomb-img-wrap">
+        <img src="images/lys-kruger.png" alt="Lys Kruger" class="tomb-img">
       </div>
     </div>
 
     <!-- James Arthur -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/james-arthur.png" alt="James Arthur" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">James Arthur</div>
           <div class="tomb-epitaph">Un homme à la flamme infaillible, qui apporta chaleur à chacun.</div>
         </div>
+        <div class="tomb-body">
+          <p>Tombé lors de la tentative de libération de la Résistance au QG de la Team Rocket à Kanto.</p>
+          <div class="last-words">Les flammes détruisent, mais elles forgent aussi ce qui renaît derrière elles.</div>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Tombé lors de la tentative de libération de la Résistance au QG de la Team Rocket à Kanto.</p>
-        <div class="last-words">Les flammes détruisent, mais elles forgent aussi ce qui renaît derrière elles.</div>
+      <div class="tomb-img-wrap">
+        <img src="images/james-arthur.png" alt="James Arthur" class="tomb-img">
       </div>
     </div>
 
     <!-- Kael Voryn -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/kael-voryn.png" alt="Kael Voryn" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Kael Voryn</div>
           <div class="tomb-epitaph">Un homme qui a toujours tout donné pour protéger la région et former la nouvelle génération.</div>
         </div>
+        <div class="tomb-body">
+          <p>Tué lors de la tentative de raisonner la Fondation Galaxy avant qu'il ne soit trop tard.</p>
+          <div class="last-words">Que mes flammes s'éteignent ici… pour que celles de ceux que j'ai protégés ne s'éteignent jamais.</div>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Tué lors de la tentative de raisonner la Fondation Galaxy avant qu'il ne soit trop tard.</p>
-        <div class="last-words">Que mes flammes s'éteignent ici… pour que celles de ceux que j'ai protégés ne s'éteignent jamais.</div>
+      <div class="tomb-img-wrap">
+        <img src="images/kael-voryn.png" alt="Kael Voryn" class="tomb-img">
       </div>
     </div>
 
     <!-- Camille Morgan -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/camille-morgan.png" alt="Camille Morgan" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Camille Morgan</div>
           <div class="tomb-epitaph">Morte après plusieurs conflits avec Harrisson Wilfred.</div>
         </div>
+        <div class="tomb-body">
+          <p>Selon les dires d'Harrisson, Flous l'aurait livrée près du volcan, où Harrisson l'aurait jetée dans la lave.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Selon les dires d'Harrisson, Flous l'aurait livrée près du volcan, où Harrisson l'aurait jetée dans la lave.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/camille-morgan.png" alt="Camille Morgan" class="tomb-img">
       </div>
     </div>
 
     <!-- Maelle Crowngard -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/maelle-crowngard.png" alt="Maelle Crowngard" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Maelle Crowngard</div>
           <div class="tomb-epitaph">Morte en sautant d'une falaise.</div>
         </div>
+        <div class="tomb-body">
+          <p>Peu d'informations subsistent sur les circonstances qui l'ont conduite à sa fin.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Peu d'informations subsistent sur les circonstances qui l'ont conduite à sa fin.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/maelle-crowngard.png" alt="Maelle Crowngard" class="tomb-img">
       </div>
     </div>
 
     <!-- Mr. Berzinguon -->
     <div class="tomb-card">
-      <div class="tomb-header">
-        <img src="images/mr-berzinguon.png" alt="Mr. Berzinguon" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Mr. Berzinguon</div>
           <div class="tomb-epitaph">Scientifique de renom, spécialiste en pokéminologie et poképhilie.</div>
         </div>
+        <div class="tomb-body">
+          <p>Sa mort fut atroce : il fut jeté dans une cuve d'acide.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Sa mort fut atroce : il fut jeté dans une cuve d'acide.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/mr-berzinguon.png" alt="Mr. Berzinguon" class="tomb-img">
+      </div>
+    </div>
+
+    <!-- Kohaku Nawaki -->
+    <div class="tomb-card">
+      <div class="tomb-left">
+        <div class="tomb-header">
+          <div class="tomb-name">Kohaku Nawaki</div>
+          <div class="tomb-epitaph">Commissaire de la DPPA sous la souveraineté de Flous. Brûlé vif par Alcor Mist.</div>
+        </div>
+        <div class="tomb-body">
+          <p>Présent dès les premières heures de la DPPA, Kohaku Nawaki porta l'insigne de l'ordre avec une conviction que peu d'agents eurent à son niveau. Il avait une conception rigide et absolue de la justice, sans place pour les nuances, les compromis ou les arrangements. Pour lui, la loi n'était pas un outil parmi d'autres, c'était un principe.</p>
+          <p>Cette intransigeance lui permit de traverser les turbulences qui secouèrent la région, les failles, les factions, les coups de force successifs. Il s'adapta sans jamais renier ses convictions, restant à son poste là où d'autres avaient choisi de partir. Il atteignit le grade de commissaire sous la souveraineté de Flous, continuant à exercer ses fonctions dans une région désormais occupée.</p>
+          <p>Il trouva la mort brûlé vif par Alcor Mist. Une fin violente pour un homme qui avait consacré sa vie à empêcher exactement ce genre de chose.</p>
+        </div>
+      </div>
+      <div class="tomb-img-wrap">
+        <img src="images/kohaku.png" alt="Kohaku Nawaki" class="tomb-img">
       </div>
     </div>
 
@@ -226,116 +273,132 @@
 
     <!-- Aelyx -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/aelyx.png" alt="Aelyx" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Aelyx</div>
           <div class="tomb-epitaph">Aeropteryx unique. Secouriste des Rangers. Mère des fossiles.</div>
         </div>
+        <div class="tomb-body">
+          <p>Fossile réanimée, Aelyx débuta sa nouvelle existence aux côtés de son premier dresseur, Alarion Zephyrel. Elle se fit rapidement un nom en tant que secouriste chez les Rangers, sauvant de nombreuses personnes lors d'expéditions. Elle vécut un moment marquant lorsqu'Entei, Suicune et Raikou lui offrirent une seconde chance en la ramenant à la vie.</p>
+          <p>Elle fit la rencontre de Yoshiro, avec qui elle partageait une connexion particulière et un même tempérament : foncer tête baissée. Par la suite, Aelyx devint la mère des fossiles, enseignant aux Pokémon préhistoriques la langue commune.</p>
+          <p>Sa destinée se dévoila lors de l'affrontement contre Hoopa. Elle reçut un coup mortel à l'abdomen en se sacrifiant pour la région mais, fidèle à elle-même, cacha sa blessure jusqu'au moment où elle vit enfin Yoshiro sain et sauf après sa capture par Harrisson.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Fossile réanimée, Aelyx débuta sa nouvelle existence aux côtés de son premier dresseur, Alarion Zephyrel. Elle se fit rapidement un nom en tant que secouriste chez les Rangers, sauvant de nombreuses personnes lors d'expéditions. Elle vécut un moment marquant lorsqu'Entei, Suicune et Raikou lui offrirent une seconde chance en la ramenant à la vie.</p>
-        <p>Elle fit la rencontre de Yoshiro, avec qui elle partageait une connexion particulière et un même tempérament : foncer tête baissée. Par la suite, Aelyx devint la mère des fossiles, enseignant aux Pokémon préhistoriques la langue commune.</p>
-        <p>Sa destinée se dévoila lors de l'affrontement contre Hoopa. Elle reçut un coup mortel à l'abdomen en se sacrifiant pour la région mais, fidèle à elle-même, cacha sa blessure jusqu'au moment où elle vit enfin Yoshiro sain et sauf après sa capture par Harrisson.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/aelyx.png" alt="Aelyx" class="tomb-img">
       </div>
     </div>
 
     <!-- Fuujimi -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/fuujimi.png" alt="Fuujimi" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Fuujimi</div>
           <div class="tomb-epitaph">Feunard shiny de Lys Kruger. Sa fourrure argentée ne reflétait plus que la colère.</div>
         </div>
+        <div class="tomb-body">
+          <p>Feunard shiny à la fourrure argentée éclatante, capturé jeune par la Team Rocket. La haine finit par consumer son âme, altérant même sa nature. Son regard ne reflétait plus la lumière, seulement la colère et la souffrance. Malgré les blessures et son cœur qui faiblissait après tant d'expériences cruelles, il continua de se battre jusqu'au bout.</p>
+          <div class="last-words">Il mourut comme sa dresseuse Lys Kruger : dans la haine, mais sans jamais avoir abandonné.</div>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Feunard shiny à la fourrure argentée éclatante, capturé jeune par la Team Rocket. La haine finit par consumer son âme, altérant même sa nature. Son regard ne reflétait plus la lumière, seulement la colère et la souffrance. Malgré les blessures et son cœur qui faiblissait après tant d'expériences cruelles, il continua de se battre jusqu'au bout.</p>
-        <div class="last-words">Il mourut comme sa dresseuse Lys Kruger : dans la haine, mais sans jamais avoir abandonné.</div>
+      <div class="tomb-img-wrap">
+        <img src="images/fuujimi.png" alt="Fuujimi" class="tomb-img">
       </div>
     </div>
 
     <!-- Satanael -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/satanael.png" alt="Satanael" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Satanael</div>
           <div class="tomb-epitaph">Dracaufeu de James Arthur et de Kael Voryn.</div>
         </div>
+        <div class="tomb-body">
+          <p>Mort de chagrin suite à la mort de ses différents dresseurs.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Mort de chagrin suite à la mort de ses différents dresseurs.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/satanael.png" alt="Satanael" class="tomb-img">
       </div>
     </div>
 
     <!-- Dracaufeu de Leon -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/dracaufeu-leon.png" alt="Dracaufeu de Leon Katchum" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Dracaufeu de Leon Katchum</div>
           <div class="tomb-epitaph">Corrompu, puis rédempteur.</div>
         </div>
+        <div class="tomb-body">
+          <p>Après avoir été corrompu par la Fondation Galaxy, il trouva rédemption à la DPPA auprès de Leon Katchum. Dans un élan de rage face à la trahison, Zoldrick Manfield le tua lors du conflit final avec la Fondation Galaxy.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Après avoir été corrompu par la Fondation Galaxy, il trouva rédemption à la DPPA auprès de Leon Katchum. Dans un élan de rage face à la trahison, Zoldrick Manfield le tua lors du conflit final avec la Fondation Galaxy.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/dracaufeu-leon.png" alt="Dracaufeu de Leon Katchum" class="tomb-img">
       </div>
     </div>
 
     <!-- Nanméouie -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/nanmeouie.png" alt="Nanméouie du Healing Harmony" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Nanméouie du Healing Harmony</div>
           <div class="tomb-epitaph">Du Café Healing Harmony.</div>
         </div>
+        <div class="tomb-body">
+          <div class="last-words">Vous savez, la violence ne résout jamais rien. Un simple sourire peut être cent fois plus puissant qu'une attaque. Alors essuyez vos larmes et faites-moi une promesse : gardez toujours ce sourire et rendez le monde meilleur.</div>
+        </div>
       </div>
-      <div class="tomb-body">
-        <div class="last-words">Vous savez, la violence ne résout jamais rien. Un simple sourire peut être cent fois plus puissant qu'une attaque. Alors essuyez vos larmes et faites-moi une promesse : gardez toujours ce sourire et rendez le monde meilleur.</div>
+      <div class="tomb-img-wrap">
+        <img src="images/nanmeouie.png" alt="Nanméouie du Healing Harmony" class="tomb-img">
       </div>
     </div>
 
     <!-- Ursaking Gardien -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/ursaking.png" alt="Ursaking Gardien" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Ursaking Gardien</div>
           <div class="tomb-epitaph">Tombé dans les montagnes enneigées.</div>
         </div>
+        <div class="tomb-body">
+          <p>Après un combat acharné entre le gardien et Ursaring, il finit par rendre son dernier souffle dans les montagnes enneigées.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Après un combat acharné entre le gardien et Ursaring, il finit par rendre son dernier souffle dans les montagnes enneigées.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/ursaking.png" alt="Ursaking Gardien" class="tomb-img">
       </div>
     </div>
 
     <!-- Virtua -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/virtua.png" alt="Virtua" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Virtua</div>
           <div class="tomb-epitaph">Porygon. Sacrifié pour la région.</div>
         </div>
+        <div class="tomb-body">
+          <p>Sacrifié pour initier l'explosion de la faille artificielle du Laboratoire de la Fondation Galaxy.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Sacrifié pour initier l'explosion de la faille artificielle du Laboratoire de la Fondation Galaxy.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/virtua.png" alt="Virtua" class="tomb-img">
       </div>
     </div>
 
     <!-- Poyo -->
     <div class="tomb-card pokemon">
-      <div class="tomb-header">
-        <img src="images/poyo.png" alt="Poyo" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Poyo</div>
           <div class="tomb-epitaph">Scorvol. L'air lui manqua.</div>
         </div>
+        <div class="tomb-body">
+          <p>Malgré les tentatives de secours, l'air manqua à Poyo, qui trépassa. Une équipe de Secours Spéléologique fut mandée par la branche Aegis, mais son sort était déjà scellé.</p>
+        </div>
       </div>
-      <div class="tomb-body">
-        <p>Malgré les tentatives de secours, l'air manqua à Poyo, qui trépassa. Une équipe de Secours Spéléologique fut mandée par la branche Aegis, mais son sort était déjà scellé.</p>
+      <div class="tomb-img-wrap">
+        <img src="images/poyo.png" alt="Poyo" class="tomb-img">
       </div>
     </div>
 
@@ -347,34 +410,35 @@
 
     <!-- Fondation Galaxy -->
     <div class="tomb-card faction">
-      <div class="tomb-header">
-        <img src="images/fondation-galaxy.png" alt="Fondation Galaxy" class="tomb-img">
-        <div class="tomb-meta">
+      <div class="tomb-left">
+        <div class="tomb-header">
           <div class="tomb-name">Fondation Galaxy</div>
           <div class="tomb-epitaph">Consumée par son rêve de remodeler la création.</div>
         </div>
-      </div>
-      <div class="tomb-body">
-        <p>La Fondation Galaxy trouva son terme dans le Monde Distorsion, engloutie par les conséquences de ses propres ambitions. Chaque membre connut un destin marqué par ses choix. Certains tombèrent dans la folie ou la destruction, d'autres acceptèrent leur jugement et portèrent leur fardeau jusqu'au bout. La plupart ne revirent jamais le monde d'origine.</p>
-        <p>Ainsi s'acheva la Fondation Galaxy, punie par la force qu'elle tenta de défier.</p>
-
-        <div class="faction-members">
-          <div class="faction-member">
-            <div><div class="faction-member-name">Tim Drake</div><div class="faction-member-desc">D'abord écrasé par le désespoir, il trouva un repère en suivant Drevos. Il resta à ses côtés, refusant de se laisser consumer par la Distorsion.</div></div>
-          </div>
-          <div class="faction-member">
-            <div><div class="faction-member-name">Néva</div><div class="faction-member-desc">Affronta Giratina avec une bravoure téméraire. Son défi fut court. Le dieu renégat la broya sans hésitation.</div></div>
-          </div>
-          <div class="faction-member">
-            <div><div class="faction-member-name">Seraph Voltaris</div><div class="faction-member-desc">Perdit pied face à la folie ambiante. Incapable de supporter le poids de la Distorsion, il se jeta dans le vide et disparut dans l'infini.</div></div>
-          </div>
-          <div class="faction-member">
-            <div><div class="faction-member-name">Osiris de Néva</div><div class="faction-member-desc">Survécut à la chute de Néva et se rapprocha des deux survivants. Sa stabilité et son calme firent de lui un ancrage dans cet univers instable.</div></div>
-          </div>
-          <div class="faction-member">
-            <div><div class="faction-member-name">Persian d'Harrisson</div><div class="faction-member-desc">Refusa l'abandon. Malgré la perte de son maître, il resta auprès de Drevos et Tim, offrant une présence silencieuse mais constante.</div></div>
+        <div class="tomb-body">
+          <p>La Fondation Galaxy trouva son terme dans le Monde Distorsion, engloutie par les conséquences de ses propres ambitions. Chaque membre connut un destin marqué par ses choix. Certains tombèrent dans la folie ou la destruction, d'autres acceptèrent leur jugement et portèrent leur fardeau jusqu'au bout. La plupart ne revirent jamais le monde d'origine.</p>
+          <p>Ainsi s'acheva la Fondation Galaxy, punie par la force qu'elle tenta de défier.</p>
+          <div class="faction-members">
+            <div class="faction-member">
+              <div><div class="faction-member-name">Tim Drake</div><div class="faction-member-desc">D'abord écrasé par le désespoir, il trouva un repère en suivant Drevos. Il resta à ses côtés, refusant de se laisser consumer par la Distorsion.</div></div>
+            </div>
+            <div class="faction-member">
+              <div><div class="faction-member-name">Néva</div><div class="faction-member-desc">Affronta Giratina avec une bravoure téméraire. Son défi fut court. Le dieu renégat la broya sans hésitation.</div></div>
+            </div>
+            <div class="faction-member">
+              <div><div class="faction-member-name">Seraph Voltaris</div><div class="faction-member-desc">Perdit pied face à la folie ambiante. Incapable de supporter le poids de la Distorsion, il se jeta dans le vide et disparut dans l'infini.</div></div>
+            </div>
+            <div class="faction-member">
+              <div><div class="faction-member-name">Osiris de Néva</div><div class="faction-member-desc">Survécut à la chute de Néva et se rapprocha des deux survivants. Sa stabilité et son calme firent de lui un ancrage dans cet univers instable.</div></div>
+            </div>
+            <div class="faction-member">
+              <div><div class="faction-member-name">Persian d'Harrisson</div><div class="faction-member-desc">Refusa l'abandon. Malgré la perte de son maître, il resta auprès de Drevos et Tim, offrant une présence silencieuse mais constante.</div></div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="tomb-img-wrap">
+        <img src="images/fondation-galaxy.png" alt="Fondation Galaxy" class="tomb-img">
       </div>
     </div>
 
