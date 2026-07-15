@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ancienne Aldreya , Wiki Aldreya</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -12,37 +12,43 @@
 .lock-row{background:var(--bg-card);border:0.5px solid var(--border);border-radius:8px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;margin-bottom:8px}
 .lock-icon-wrap{width:36px;height:36px;border-radius:8px;background:#1a1200;border:0.5px solid #3a2a10;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .lock-icon-wrap svg{width:16px;height:16px;fill:none;stroke:#c49a4a;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.lock-title{font-size:13px;font-weight:500;color:var(--text-muted);margin-bottom:2px}
-.lock-sub{font-size:11px;color:var(--text-dim)}
+.lock-title{font-size:var(--fs-meta);font-weight:500;color:var(--text-muted);margin-bottom:2px}
+.lock-sub{font-size:var(--fs-label);color:var(--text-dim)}
 .fleaux-status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.5rem}
 .f-status-card{background:var(--bg-card);border:0.5px solid var(--border);border-radius:8px;padding:12px 10px;text-align:center}
 .f-status-card.f-free{border-color:#3a1a0a}
 .f-status-card .f-icon{font-size:22px;margin-bottom:6px}
-.f-status-card .f-name{font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;letter-spacing:.02em}
+.f-status-card .f-name{font-family:var(--font-display);font-size:var(--fs-meta);font-weight:600;color:var(--text);margin-bottom:4px;letter-spacing:.02em}
 .f-status-card.f-locked .f-name{color:transparent;text-shadow:0 0 8px rgba(100,100,100,.4);filter:blur(3px);user-select:none}
-.f-status-card .f-state{font-family:var(--font-mono);font-size:9px;letter-spacing:.06em}
+.f-status-card .f-state{font-family:var(--font-mono);font-size:var(--fs-badge);letter-spacing:.06em}
 .f-status-card.f-free .f-state{color:#c06040}
 .f-status-card.f-locked .f-state{color:var(--text-dim)}
 .fleau-block{background:var(--bg-card);border:0.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:12px}
 .fleau-block-head{padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:0.5px solid var(--border)}
 .fb-icon{font-size:24px;flex-shrink:0}
-.fb-name{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:.03em}
+.fb-name{font-family:var(--font-display);font-size:var(--fs-body);font-weight:600;letter-spacing:.03em}
 .fb-types{margin-top:3px}
-.fb-badge{font-family:var(--font-mono);font-size:9px;padding:2px 8px;border-radius:20px;margin-left:auto;letter-spacing:.05em;white-space:nowrap}
+.fb-badge{font-family:var(--font-mono);font-size:var(--fs-badge);padding:2px 8px;border-radius:20px;margin-left:auto;letter-spacing:.05em;white-space:nowrap}
 .fb-badge.f-free-badge{background:rgba(160,60,30,.15);color:#c06040;border:0.5px solid rgba(160,60,30,.3)}
 .fleau-block-body{padding:14px 16px}
-.fleau-block-body p{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:8px}
+.fleau-block-body p{font-size:var(--fs-compact);color:var(--text-muted);line-height:1.75;margin-bottom:8px}
 .fleau-block-body p:last-child{margin-bottom:0}
 .locked-block{position:relative;overflow:hidden}
-.locked-blur-content{padding:14px 16px;font-size:14px;line-height:1.75;color:transparent;text-shadow:0 0 10px rgba(80,80,80,.35);user-select:none;filter:blur(5px);background:var(--bg-card)}
+.locked-blur-content{padding:14px 16px;font-size:var(--fs-compact);line-height:1.75;color:transparent;text-shadow:0 0 10px rgba(80,80,80,.35);user-select:none;filter:blur(5px);background:var(--bg-card)}
 .locked-veil{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(8,8,8,.78);gap:7px}
 .locked-veil-icon{font-size:18px;opacity:.3}
-.locked-veil-text{font-family:var(--font-mono);font-size:9px;color:var(--text-dim);letter-spacing:.12em;text-transform:uppercase}
+.locked-veil-text{font-family:var(--font-mono);font-size:var(--fs-badge);color:var(--text-dim);letter-spacing:.12em;text-transform:uppercase}
 .b-tenebresx{background:#120028;color:#b86aff;border:0.5px solid #2a0050}
 .revelation-block{background:#090e09;border:0.5px solid var(--border-rift);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem}
-.revelation-block h3{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--rift);letter-spacing:.03em;margin-bottom:8px}
-.revelation-block p{font-size:14px;color:var(--text-muted);line-height:1.75;margin-bottom:6px}
+.revelation-block h3{font-family:var(--font-display);font-size:var(--fs-ui);font-weight:600;color:var(--rift);letter-spacing:.03em;margin-bottom:8px}
+.revelation-block p{font-size:var(--fs-compact);color:var(--text-muted);line-height:1.75;margin-bottom:6px}
 .revelation-block p:last-child{margin-bottom:0}
+
+/* Responsive fleaux */
+@media (max-width: 700px) {
+.fleaux-status-grid{grid-template-columns:repeat(2,1fr)}
+.fleau-block-head{flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
@@ -80,11 +86,11 @@
       </div>
 
     <div style="background:var(--bg-card);border:0.5px solid #2a1f00;border-radius:10px;padding:2rem;margin-bottom:1.5rem;text-align:center;">
-      <div style="font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;">Archives scellées</div>
-      <p style="font-size:14px;color:#c0a060;line-height:1.9;font-style:italic;max-width:560px;margin:0 auto 1.5rem;">
+      <div style="font-family:var(--font-mono);font-size:var(--fs-label);color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.5rem;">Archives scellées</div>
+      <p style="font-size:var(--fs-compact);color:#c0a060;line-height:1.9;font-style:italic;max-width:560px;margin:0 auto 1.5rem;">
         "Cette histoire, peu la connaissent encore aujourd'hui. Elle a été oubliée, d'abord par négligence, puis par volonté, puis définitivement par les catastrophes qui ravagèrent la région lors de l'arrivée des failles."
       </p>
-      <p style="font-size:13px;color:var(--text-muted);line-height:1.7;max-width:480px;margin:0 auto;">
+      <p style="font-size:var(--fs-meta);color:var(--text-muted);line-height:1.7;max-width:480px;margin:0 auto;">
         Ce que l'on sait tient dans des gravures que personne ne sait lire, des expressions dont le sens s'est perdu, et quelques ruines dont la fonction a depuis longtemps cessé d'interroger quiconque.
       </p>
     </div>
@@ -108,10 +114,28 @@
 
 <div class="fleaux-status-grid"><div class="f-status-card f-free"><div class="f-icon">🔥</div><div class="f-name">Yuyu</div><div class="f-state">⚠ Libéré</div></div><div class="f-status-card f-free"><div class="f-icon">🌿</div><div class="f-name">Chong Jian</div><div class="f-state">⚠ Libéré</div></div><div class="f-status-card f-locked"><div class="f-icon">❄</div><div class="f-name" style="color:transparent;text-shadow:0 0 8px rgba(100,100,100,.4);filter:blur(3px);user-select:none">Baojian</div><div class="f-state">⛓ Scellé</div></div><div class="f-status-card f-locked"><div class="f-icon">🪨</div><div class="f-name" style="color:transparent;text-shadow:0 0 8px rgba(100,100,100,.4);filter:blur(3px);user-select:none">Dinglu</div><div class="f-state">⛓ Scellé</div></div></div>
 
-    <div class="fleau-block">
+    <!-- ================================================================
+GUIDE : AJOUTER UN BLOC FLÉAU LIBÉRÉ
+Modèle basé sur les blocs existants. L'icône est un emoji, le
+style du bandeau (fleau-block-head) peut reprendre la teinte du
+Fléau. Le bloc alert-warn liste les signes d'influence en jeu.
+
+<div class="fleau-block">
+  <div class="fleau-block-head" style="background:rgba(40,15,5,.6)">
+    <span class="fb-icon">🔥</span>
+    <div><div class="fb-name" style="color:#ccc">Nom du Fléau</div><div class="fb-types"><span class="badge b-feu" style="font-size:var(--fs-badge)">Type</span></div></div>
+    <span class="fb-badge f-free-badge">⚠ Libéré</span>
+  </div>
+  <div class="fleau-block-body"><p>Description de son influence sur la région.</p>
+    <div class="alert-warn"><strong>Signes d'influence :</strong> Liste des comportements observables.</div>
+  </div>
+</div>
+================================================================ -->
+
+<div class="fleau-block">
       <div class="fleau-block-head" style="background:rgba(40,15,5,.6)">
         <span class="fb-icon">🔥</span>
-        <div><div class="fb-name" style="color:#ccc">Yuyu</div><div class="fb-types"><span class="badge b-feu" style="font-size:10px">Feu</span> <span class="badge b-tenebresx" style="font-size:10px">Ténèbres</span></div></div>
+        <div><div class="fb-name" style="color:#ccc">Yuyu</div><div class="fb-types"><span class="badge b-feu" style="font-size:var(--fs-badge)">Feu</span> <span class="badge b-tenebresx" style="font-size:var(--fs-badge)">Ténèbres</span></div></div>
         <span class="fb-badge f-free-badge">⚠ Libéré en premier</span>
       </div>
       <div class="fleau-block-body"><p>Yuyu est libre. Son influence se répand dans la région de façon diffuse, difficile à percevoir au début. Elle agit sur les désirs, les amplifiant jusqu'à ce qu'ils deviennent incontrôlables. Ce qui était une envie ordinaire devient une obsession.</p><div class="alert-warn"><strong>Signes d'influence :</strong> Comportements d'accumulation compulsive, méfiance croissante envers ceux qui possèdent ce qu'on désire, difficulté à partager même avec des proches. Ceux qui en sont affectés ne le réalisent généralement pas.</div></div>
@@ -120,7 +144,7 @@
     <div class="fleau-block">
       <div class="fleau-block-head" style="background:rgba(5,25,5,.6)">
         <span class="fb-icon">🌿</span>
-        <div><div class="fb-name" style="color:#ccc">Chong Jian</div><div class="fb-types"><span class="badge b-plante" style="font-size:10px">Plante</span> <span class="badge b-tenebresx" style="font-size:10px">Ténèbres</span></div></div>
+        <div><div class="fb-name" style="color:#ccc">Chong Jian</div><div class="fb-types"><span class="badge b-plante" style="font-size:var(--fs-badge)">Plante</span> <span class="badge b-tenebresx" style="font-size:var(--fs-badge)">Ténèbres</span></div></div>
         <span class="fb-badge f-free-badge">⚠ Libéré en second</span>
       </div>
       <div class="fleau-block-body"><p>Chong Jian est libre. Son influence réveille ce qui était enfoui : des rancœurs anciennes remontent à la surface, des conflits que l'on croyait réglés se rouvrent. L'hostilité envers les structures d'autorité s'intensifie.</p><div class="alert-warn"><strong>Signes d'influence :</strong> Rumination sur des injustices passées, interprétation des situations neutres comme des provocations délibérées, incapacité à passer outre les griefs anciens. Les rancœurs qu'elle amplifie sont souvent fondées sur des faits réels.</div></div>
@@ -129,7 +153,7 @@
     <div class="fleau-block">
       <div class="fleau-block-head" style="background:var(--bg-card2)">
         <span class="fb-icon">❄</span>
-        <div><div class="fb-name" style="color:var(--text-dim)">Entité inconnue</div><div style="font-size:13px;color:var(--text-dim)">Sceau intact</div></div>
+        <div><div class="fb-name" style="color:var(--text-dim)">Entité inconnue</div><div style="font-size:var(--fs-meta);color:var(--text-dim)">Sceau intact</div></div>
         <span class="fb-badge" style="background:var(--bg-card2);color:var(--text-dim);border:0.5px solid var(--border)">⛓ Scellé</span>
       </div>
       <div class="locked-block">
@@ -141,7 +165,7 @@
     <div class="fleau-block">
       <div class="fleau-block-head" style="background:var(--bg-card2)">
         <span class="fb-icon">🪨</span>
-        <div><div class="fb-name" style="color:var(--text-dim)">Entité inconnue</div><div style="font-size:13px;color:var(--text-dim)">Sceau intact</div></div>
+        <div><div class="fb-name" style="color:var(--text-dim)">Entité inconnue</div><div style="font-size:var(--fs-meta);color:var(--text-dim)">Sceau intact</div></div>
         <span class="fb-badge" style="background:var(--bg-card2);color:var(--text-dim);border:0.5px solid var(--border)">⛓ Scellé</span>
       </div>
       <div class="locked-block">
@@ -159,7 +183,7 @@
       <p class="quote-text">Quelque chose dans les profondeurs d'Aldreya attend encore. Et l'énergie des humains, leurs désirs, leurs peurs, leurs rancœurs, continue d'alimenter ce qui ronge les sceaux restants.</p>
     </div>
 
-    <div style="border-left:2px solid #3a2a10;background:#0e0a00;padding:0.875rem 1.1rem;border-radius:0 6px 6px 0;font-size:13px;color:#9a8a60;line-height:1.7;font-style:italic;">
+    <div style="border-left:2px solid #3a2a10;background:#0e0a00;padding:0.875rem 1.1rem;border-radius:0 6px 6px 0;font-size:var(--fs-meta);color:#9a8a60;line-height:1.7;font-style:italic;">
       Les pieux existent encore, quelque part dans la région. Personne ne sait ce qu'ils sont. Personne ne sait ce qu'ils retiennent. Personne, pour l'instant.
     </div>
 

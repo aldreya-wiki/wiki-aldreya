@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lore Aldreya — Wiki Aldreya</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -121,7 +121,21 @@
       Les factions d'Aldreya
     </h2>
 
-    <div class="faction-grid">
+    <!-- ================================================================
+GUIDE : AJOUTER UNE FACTION
+Colle une nouvelle carte dans la grille ci-dessous.
+Statuts : status-active (vert), status-inactive (gris),
+status-dissolved (gris barré).
+
+<div class="faction-card">
+  <div class="faction-name">Nom de la faction <span class="faction-status status-active">Active</span></div>
+  <div class="faction-body">
+    <p>Description de la faction.</p>
+  </div>
+</div>
+================================================================ -->
+
+<div class="faction-grid">
       <div class="faction-card">
         <div class="faction-name">Team Galaxy <span class="faction-status status-dissolved">Dissoute</span></div>
         <div class="faction-body">
@@ -163,7 +177,39 @@
 
 
 
-    <div class="event-timeline">
+    <!-- ================================================================
+GUIDE : AJOUTER UN ÉVÉNEMENT À LA CHRONOLOGIE
+Colle ce bloc entre deux event-item existants, dans l'ordre
+chronologique. Le trait vertical (event-dot-line) relie chaque
+événement au suivant : le tout dernier de la liste n'en a pas.
+
+<div class="event-item">
+  <div class="event-dot"><div class="event-dot-circle"></div><div class="event-dot-line"></div></div>
+  <div class="event-content">
+    <div class="event-title">Titre de l'événement</div>
+    <div class="event-desc">Description de ce qui s'est produit.</div>
+  </div>
+</div>
+
+Version événement majeur (mis en avant en vert) : ajouter la
+classe major aux deux endroits.
+<div class="event-item">
+  <div class="event-dot"><div class="event-dot-circle major"></div><div class="event-dot-line"></div></div>
+  <div class="event-content major">
+    <div class="event-title">Titre</div>
+    <div class="event-desc">Description.</div>
+  </div>
+</div>
+
+AJOUTER UN PARAGRAPHE DE LORE (bloc de texte simple) :
+<div class="lore-block">
+  <p>Texte du paragraphe. Utiliser <strong>gras</strong> pour les
+  noms importants et <span class="rift-word">faille</span> pour
+  les mots liés aux failles (effet lumineux).</p>
+</div>
+================================================================ -->
+
+<div class="event-timeline">
 
       <div class="event-item">
         <div class="event-dot"><div class="event-dot-circle"></div><div class="event-dot-line"></div></div>
@@ -273,22 +319,22 @@
 
       <div class="lore-block">
         <p><strong>Événements publics des jeux officiels = canon.</strong> Tous les événements majeurs des jeux Pokémon officiels, visibles publiquement dans leur propre univers, sont considérés comme canon pour Aldreya. Cela inclut les catastrophes régionales, l'apparition publique de légendaires, les décisions gouvernementales, ou les actions de grande envergure des Teams criminelles.</p>
-        <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">Exemple : l'attaque de la Team Aqua sur Poivressel dans Rubis Oméga est un événement public. Aldreya considère que cet acte a existé dans l'histoire du monde et peut influencer la perception locale des Teams criminelles.</p>
+        <p style="font-size:var(--fs-meta); color:var(--text-muted); margin-top:6px;">Exemple : l'attaque de la Team Aqua sur Poivressel dans Rubis Oméga est un événement public. Aldreya considère que cet acte a existé dans l'histoire du monde et peut influencer la perception locale des Teams criminelles.</p>
       </div>
 
       <div class="lore-block">
         <p><strong>Événements privés et exclusifs au joueur = non pris en compte.</strong> Les scènes secrètes, quêtes invisibles au public ou révélations exclusives du protagoniste n'ont aucune existence historique dans Aldreya. Le manga et l'anime sont également exclus comme sources valides.</p>
-        <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">Exemple : un légendaire rencontré seul dans une grotte isolée sans témoin n'a jamais eu lieu dans la continuité d'Aldreya. La discussion privée avec AZ dans Pokémon X/Y n'existe pas non plus.</p>
+        <p style="font-size:var(--fs-meta); color:var(--text-muted); margin-top:6px;">Exemple : un légendaire rencontré seul dans une grotte isolée sans témoin n'a jamais eu lieu dans la continuité d'Aldreya. La discussion privée avec AZ dans Pokémon X/Y n'existe pas non plus.</p>
       </div>
 
       <div class="lore-block">
         <p><strong>Zone Zero exclue intégralement.</strong> Les événements de la Zone Zero dans Écarlate et Violet ne doivent pas être pris en compte. Le scénario lié au paradoxe temporel, aux Pokémon Paradoxes et au projet du Professeur Turum/Paprika est à exclure totalement.</p>
-        <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">Aucune mention des Pokémon du passé futur, aucune technologie issue de la Zone Zero, aucun savoir lié aux IA ou machines d'ultra passages ne doit apparaître dans Aldreya.</p>
+        <p style="font-size:var(--fs-meta); color:var(--text-muted); margin-top:6px;">Aucune mention des Pokémon du passé futur, aucune technologie issue de la Zone Zero, aucun savoir lié aux IA ou machines d'ultra passages ne doit apparaître dans Aldreya.</p>
       </div>
 
       <div class="lore-block">
         <p><strong>Mythes et légendes : connaissances restreintes.</strong> L'accès à ces informations se fait uniquement via des professeurs, des figures d'autorité reconnues ou des recherches supervisées dans le cadre d'une trame RP. Toute incohérence sera sanctionnée comme du WinRP ou du MetaGaming.</p>
-        <p style="font-size:13px; color:var(--text-muted); margin-top:6px;">Un dresseur débutant ne peut pas déclarer connaître l'existence d'Arceus sans justification RP. Un civil ne peut pas réciter l'histoire des trois golems sans avoir étudié l'archéologie ou consulté un expert.</p>
+        <p style="font-size:var(--fs-meta); color:var(--text-muted); margin-top:6px;">Un dresseur débutant ne peut pas déclarer connaître l'existence d'Arceus sans justification RP. Un civil ne peut pas réciter l'histoire des trois golems sans avoir étudié l'archéologie ou consulté un expert.</p>
       </div>
 
       <div class="alert-warn" style="margin-bottom:0;">

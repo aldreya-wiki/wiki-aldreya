@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guide du serveur — Wiki Aldreya</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -131,7 +131,7 @@
 
     <!-- LE PC -->
     <h2 class="section-title">Le PC</h2>
-    <p style="font-size:15px; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">Le PC est accessible dans tous les Centres Pokémon. Il te permet de changer de rôle entre dresseur et Pokémon, et donne accès aux différentes pages de Pokémon jouables selon ta progression.</p>
+    <p style="font-size:var(--fs-ui); color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">Le PC est accessible dans tous les Centres Pokémon. Il te permet de changer de rôle entre dresseur et Pokémon, et donne accès aux différentes pages de Pokémon jouables selon ta progression.</p>
 
     <div class="pc-grid">
       <div class="info-card">
@@ -201,13 +201,13 @@
         <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:var(--rift);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         Qu'est-ce qu'une trame ?
       </div>
-      <p style="font-size:13px; color:var(--text-muted); line-height:1.7; margin-bottom:8px;">Une trame est un document (GDoc ou Canva) rédigé par le joueur avant de commencer à jouer son Pokémon. Elle doit contenir :</p>
+      <p style="font-size:var(--fs-meta); color:var(--text-muted); line-height:1.7; margin-bottom:8px;">Une trame est un document (GDoc ou Canva) rédigé par le joueur avant de commencer à jouer son Pokémon. Elle doit contenir :</p>
       <ul class="info-list">
         <li>La ligne directrice que va suivre le personnage</li>
         <li>Les besoins envers l'équipe d'animation</li>
         <li>Les objectifs à court et long terme du personnage</li>
       </ul>
-      <p style="font-size:12px; color:var(--text-muted); margin-top:10px; font-family:var(--font-mono); letter-spacing:0.04em;">La trame doit être validée par l'équipe d'animation avant de pouvoir jouer le Pokémon.</p>
+      <p class="mono-note" style="margin-top:10px;">La trame doit être validée par l'équipe d'animation avant de pouvoir jouer le Pokémon.</p>
     </div>
 
     <hr class="divider">
@@ -222,13 +222,13 @@
           Commandes slash
         </div>
         <ul class="info-list" style="gap:0;">
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/name</span>&nbsp;&nbsp;Changer de nom</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/[nompokemon]</span>&nbsp;&nbsp;Choisir un Pokémon sans passer par le PC (ex. /Pikachu)</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/[nomjob]</span>&nbsp;&nbsp;Choisir un rôle humain (ex. /dresseur)</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/me</span>&nbsp;&nbsp;Décrire une action à l'écrit</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/na</span>&nbsp;&nbsp;Faire une narration</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/it</span>&nbsp;&nbsp;Narration locale</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">/prestige</span>&nbsp;&nbsp;Passer un prestige</li>
+          <li><span class="mono-accent">/name</span>&nbsp;&nbsp;Changer de nom</li>
+          <li><span class="mono-accent">/[nompokemon]</span>&nbsp;&nbsp;Choisir un Pokémon sans passer par le PC (ex. /Pikachu)</li>
+          <li><span class="mono-accent">/[nomjob]</span>&nbsp;&nbsp;Choisir un rôle humain (ex. /dresseur)</li>
+          <li><span class="mono-accent">/me</span>&nbsp;&nbsp;Décrire une action à l'écrit</li>
+          <li><span class="mono-accent">/na</span>&nbsp;&nbsp;Faire une narration</li>
+          <li><span class="mono-accent">/it</span>&nbsp;&nbsp;Narration locale</li>
+          <li><span class="mono-accent">/prestige</span>&nbsp;&nbsp;Passer un prestige</li>
         </ul>
       </div>
       <div class="info-card">
@@ -237,10 +237,10 @@
           Commandes point d'exclamation
         </div>
         <ul class="info-list">
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">!probas</span>&nbsp;&nbsp;Voir les probabilités de drop dans les systèmes de farm</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">!talents</span>&nbsp;&nbsp;Voir les talents disponibles</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">!Market</span>&nbsp;&nbsp;Voir le market</li>
-          <li><span style="color:var(--rift); font-family:var(--font-mono); font-size:11px;">!time</span>&nbsp;&nbsp;Voir ton temps de jeu</li>
+          <li><span class="mono-accent">!probas</span>&nbsp;&nbsp;Voir les probabilités de drop dans les systèmes de farm</li>
+          <li><span class="mono-accent">!talents</span>&nbsp;&nbsp;Voir les talents disponibles</li>
+          <li><span class="mono-accent">!Market</span>&nbsp;&nbsp;Voir le market</li>
+          <li><span class="mono-accent">!time</span>&nbsp;&nbsp;Voir ton temps de jeu</li>
         </ul>
       </div>
     </div>
@@ -251,8 +251,8 @@
         Touches importantes
       </div>
       <ul class="info-list">
-        <li><span style="color:var(--text); font-family:var(--font-mono); font-size:11px; background:var(--bg-card2); padding:1px 7px; border-radius:4px; border:0.5px solid var(--border);">E</span>&nbsp;&nbsp;Appuyer sur un joueur pour ouvrir le menu d'interaction</li>
-        <li><span style="color:var(--text); font-family:var(--font-mono); font-size:11px; background:var(--bg-card2); padding:1px 7px; border-radius:4px; border:0.5px solid var(--border);">B</span>&nbsp;&nbsp;En mode Pokémon, ouvre le menu de stats et options</li>
+        <li><span class="mono-chip">E</span>&nbsp;&nbsp;Appuyer sur un joueur pour ouvrir le menu d'interaction</li>
+        <li><span class="mono-chip">B</span>&nbsp;&nbsp;En mode Pokémon, ouvre le menu de stats et options</li>
       </ul>
     </div>
 
@@ -260,7 +260,7 @@
 
     <!-- SUIVI RP -->
     <h2 class="section-title">Suivi RP</h2>
-    <p style="font-size:15px; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">Le suivi RP permet à un membre de l'équipe d'animation de suivre l'évolution de ton personnage et d'interagir avec lui de manière narrative. Il se crée via un ticket Discord.</p>
+    <p style="font-size:var(--fs-ui); color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">Le suivi RP permet à un membre de l'équipe d'animation de suivre l'évolution de ton personnage et d'interagir avec lui de manière narrative. Il se crée via un ticket Discord.</p>
 
     <div class="alert-warn" style="margin-bottom:1.5rem;">
       <strong>Condition d'accès.</strong> Un minimum d'investissement est requis avant d'ouvrir un suivi. Il est conseillé d'avoir obtenu environ 5 à 6 badges, ce qui témoigne de ton engagement sur le serveur.
@@ -268,27 +268,27 @@
 
     <p class="section-label">Informations requises pour la création</p>
     <div style="background:var(--bg-card); border:0.5px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:1.5rem;">
-      <div style="background:var(--bg-card2); padding:0.75rem 1.1rem; border-bottom:0.5px solid var(--border); font-family:var(--font-mono); font-size:11px; letter-spacing:0.10em; color:var(--rift-dim); text-transform:uppercase;">Ticket Discord — Suivi RP</div>
+      <div class="mono-header">Ticket Discord — Suivi RP</div>
       <div style="padding:0.25rem 0;">
         <div style="display:flex; align-items:baseline; gap:12px; padding:0.625rem 1.1rem; border-bottom:0.5px solid var(--border);">
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--rift); min-width:140px; flex-shrink:0;">SteamID64</span>
-          <span style="font-size:13px; color:var(--text-muted);">Ton identifiant Steam unique</span>
+          <span class="mono-label" style="min-width:140px; flex-shrink:0;">SteamID64</span>
+          <span style="font-size:var(--fs-meta); color:var(--text-muted);">Ton identifiant Steam unique</span>
         </div>
         <div style="display:flex; align-items:baseline; gap:12px; padding:0.625rem 1.1rem; border-bottom:0.5px solid var(--border);">
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--rift); min-width:140px; flex-shrink:0;">Description</span>
-          <span style="font-size:13px; color:var(--text-muted);">Apparence, traits de personnalité, comportement général du personnage</span>
+          <span class="mono-label" style="min-width:140px; flex-shrink:0;">Description</span>
+          <span style="font-size:var(--fs-meta); color:var(--text-muted);">Apparence, traits de personnalité, comportement général du personnage</span>
         </div>
         <div style="display:flex; align-items:baseline; gap:12px; padding:0.625rem 1.1rem; border-bottom:0.5px solid var(--border);">
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--rift); min-width:140px; flex-shrink:0;">Histoire</span>
-          <span style="font-size:13px; color:var(--text-muted);">Passé et origine du personnage, ce qui l'a amené à Aldreya</span>
+          <span class="mono-label" style="min-width:140px; flex-shrink:0;">Histoire</span>
+          <span style="font-size:var(--fs-meta); color:var(--text-muted);">Passé et origine du personnage, ce qui l'a amené à Aldreya</span>
         </div>
         <div style="display:flex; align-items:baseline; gap:12px; padding:0.625rem 1.1rem; border-bottom:0.5px solid var(--border);">
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--rift); min-width:140px; flex-shrink:0;">Objectifs</span>
-          <span style="font-size:13px; color:var(--text-muted);">Ce que le personnage cherche à accomplir à court et long terme</span>
+          <span class="mono-label" style="min-width:140px; flex-shrink:0;">Objectifs</span>
+          <span style="font-size:var(--fs-meta); color:var(--text-muted);">Ce que le personnage cherche à accomplir à court et long terme</span>
         </div>
         <div style="display:flex; align-items:baseline; gap:12px; padding:0.625rem 1.1rem;">
-          <span style="font-family:var(--font-mono); font-size:12px; color:var(--rift); min-width:140px; flex-shrink:0;">Besoins animation</span>
-          <span style="font-size:13px; color:var(--text-muted);">Ce que tu attends de l'équipe d'animation pour faire avancer ton personnage</span>
+          <span class="mono-label" style="min-width:140px; flex-shrink:0;">Besoins animation</span>
+          <span style="font-size:var(--fs-meta); color:var(--text-muted);">Ce que tu attends de l'équipe d'animation pour faire avancer ton personnage</span>
         </div>
       </div>
     </div>
@@ -312,7 +312,39 @@
     <h2 class="section-title">Villes et arènes</h2>
 
     <p class="section-label">Arène 1</p>
-    <div class="ville-card">
+    <!-- ================================================================
+GUIDE : AJOUTER UNE VILLE OU UNE ARÈNE
+Colle ce bloc à l'endroit voulu dans la liste :
+
+<div class="ville-card">
+  <div class="ville-header">
+    <img src="images/nomville.jpg" alt="Nom de la ville" class="ville-img">
+    <div class="ville-meta">
+      <div class="ville-top"><span class="ville-num">10</span><span class="ville-name-text">Nom de la ville</span><span class="badge b-normal">Type</span></div>
+      <div class="ville-desc-text">Description courte de la ville.</div>
+    </div>
+  </div>
+  <div class="ville-body">
+    <div class="ville-col">
+      <div class="col-label">Lieux notables</div>
+      <ul class="lieux-list"><li>Premier lieu</li><li>Deuxième lieu</li></ul>
+    </div>
+    <div class="ville-col">
+      <div class="col-label">PNJ importants</div>
+      <div class="pnj-item"><div class="pnj-role">Rôle du PNJ</div><div class="pnj-loc">Lieu où le trouver</div></div>
+    </div>
+    <div class="ville-col">
+      <div class="col-label">Accès</div>
+      <div class="route-step"><span class="route-step-num">1</span><span class="route-step-text">Première étape du trajet.</span></div>
+    </div>
+  </div>
+</div>
+
+Badges de types disponibles : b-normal b-plante b-feu b-eau
+b-roche b-spectre b-combat b-vol b-glace b-route
+================================================================ -->
+
+<div class="ville-card">
       <div class="ville-header">
         <img src="images/brysilia.jpg" alt="" class="ville-img">
         <div class="ville-meta">
@@ -323,7 +355,7 @@
       <div class="ville-body">
         <div class="ville-col"><div class="col-label">Lieux notables</div><ul class="lieux-list"><li>Musée</li><li>Académie</li><li>Laboratoire des professeurs</li></ul></div>
         <div class="ville-col"><div class="col-label">PNJ importants</div><div class="pnj-item"><div class="pnj-role">Donneur de quêtes</div><div class="pnj-loc">Devant l'académie</div></div><div class="pnj-item"><div class="pnj-role">PNJ d'introduction</div><div class="pnj-loc">Devant le laboratoire</div></div></div>
-        <div class="ville-col"><div class="col-label">Accès</div><p class="none-text" style="font-style:normal; color:var(--text-muted); font-size:11px;">Ville de départ, tous les joueurs y arrivent à la création de leur personnage.</p></div>
+        <div class="ville-col"><div class="col-label">Accès</div><p class="none-text" class="mono-note" style="font-style:normal;">Ville de départ, tous les joueurs y arrivent à la création de leur personnage.</p></div>
       </div>
     </div>
 
@@ -428,7 +460,7 @@
       <div class="ville-header">
         <img src="images/sablith.jpg" alt="" class="ville-img">
         <div class="ville-meta">
-          <div class="ville-top"><span class="ville-num">08</span><span class="ville-name-text">Sablith <span style="font-size:13px;font-weight:400;color:var(--text-muted)">/ Piste Flambusard</span></span><span class="badge b-vol">Vol</span></div>
+          <div class="ville-top"><span class="ville-num">08</span><span class="ville-name-text">Sablith <span style="font-size:var(--fs-meta);font-weight:400;color:var(--text-muted)">/ Piste Flambusard</span></span><span class="badge b-vol">Vol</span></div>
           <p class="ville-desc-text">La plus grande ville d'Aldreya, dans le désert. Centre commercial et social de la région. La Piste Flambusard accueille régulièrement des petits avions et hélicoptères.</p>
         </div>
       </div>
@@ -466,7 +498,7 @@
       </div>
       <div class="ville-body">
         <div class="ville-col"><div class="col-label">Lieux notables</div><ul class="lieux-list"><li>Temple Arceus</li><li>Grotte de Glace</li></ul></div>
-        <div class="ville-col"><div class="col-label">Condition</div><p style="font-size:13px; color:var(--text-muted);">Les 9 badges d'arène sont requis.</p></div>
+        <div class="ville-col"><div class="col-label">Condition</div><p style="font-size:var(--fs-meta); color:var(--text-muted);">Les 9 badges d'arène sont requis.</p></div>
         <div class="ville-col"><div class="col-label">Accès</div><div class="route-step"><span class="route-step-num">1.</span><span class="route-step-text">Depuis Frimabourg, continuer vers le sommet</span></div></div>
       </div>
     </div>

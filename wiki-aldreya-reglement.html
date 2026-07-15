@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Règlement — Wiki Aldreya</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -48,7 +48,29 @@
     </div>
 
     <!-- FONDAMENTAUX -->
-    <div class="chapter">
+    <!-- ================================================================
+GUIDE : AJOUTER UNE RÈGLE
+Colle ce bloc dans le chapitre voulu :
+
+<div class="rule-block">
+  <div class="rule-title"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>Titre de la règle</div>
+  <div class="rule-body">
+    <p>Texte de la règle.</p>
+    <ul class="rule-list">
+      <li>Point de détail.</li>
+    </ul>
+  </div>
+</div>
+
+Pour un exemple autorisé / interdit dans le rule-body :
+<p><span class="ex-label ex-ok">Correct :</span> <span class="ex-ok">Exemple correct.</span></p>
+<p><span class="ex-label ex-bad">Interdit :</span> <span class="ex-bad">Exemple interdit.</span></p>
+
+Pour une alerte importante :
+<div class="alert-danger"><strong>Attention :</strong> Texte.</div>
+================================================================ -->
+
+<div class="chapter">
       <div class="chapter-title">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Fondamentaux du Roleplay
@@ -291,7 +313,7 @@
             <li>Transférer son Aura à la cible de son choix, cette technique peut coûter la vie à l'utilisateur (nécessite un /roll)</li>
           </ul>
           <p style="margin-top:8px;">Toute demande en lien avec l'Aura doit faire l'objet d'une validation préalable par le staff RP via ticket. Cette validation se fait via une trame RP écrite et cohérente, justifiant le besoin de l'utilisation de l'Aura et ses différents pouvoirs.</p>
-          <p style="margin-top:6px; font-size:15px; color:var(--text-dim);"><em>L'Aura est une manifestation rare de la sensibilité et de l'harmonie entre un être et l'énergie du monde. Elle doit être utilisée comme un outil narratif profond, favorisant les interactions RP et le développement des personnages. Elle ne doit jamais devenir un moyen de détection systématique, de métagaming ou d'avantage injustifié.</em></p>
+          <p style="margin-top:6px; font-size:var(--fs-ui); color:var(--text-dim);"><em>L'Aura est une manifestation rare de la sensibilité et de l'harmonie entre un être et l'énergie du monde. Elle doit être utilisée comme un outil narratif profond, favorisant les interactions RP et le développement des personnages. Elle ne doit jamais devenir un moyen de détection systématique, de métagaming ou d'avantage injustifié.</em></p>
         </div>
       </div>
 
@@ -445,6 +467,7 @@
 
     <div class="update-note">
       <strong>Mises à jour du règlement.</strong> Le règlement peut évoluer à tout moment selon les besoins du serveur. Toute modification sera annoncée sur le Discord ou directement en jeu.
+      <p style="margin-top:8px; margin-bottom:0;">Le staff se réserve le droit d'appliquer des sanctions en cas de besoin, même en l'absence de règle spécifique, dès lors que cela relève du bon sens et de la logique. La règle correspondante sera ajoutée par la suite si nécessaire.</p>
     </div>
 
     <div class="wiki-footer">

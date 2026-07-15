@@ -3,6 +3,9 @@
 (function () {
   'use strict';
 
+  var REDUCE_MOTION = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* =====================================================
      1. ANIMATIONS D'ENTRÉE AU CHARGEMENT
   ===================================================== */
@@ -50,6 +53,8 @@
   ===================================================== */
   function initParticles() {
     if (!document.querySelector('.stats-grid')) return; // seulement sur l'accueil
+    if (REDUCE_MOTION) return;
+    if (window.innerWidth < 768) return; // pas sur mobile (batterie)
 
     var canvas = document.createElement('canvas');
     canvas.style.cssText =
@@ -198,6 +203,7 @@
      6. LOGO PULSE SUBTIL
   ===================================================== */
   function initLogoPulse() {
+    if (REDUCE_MOTION) return;
     var logo = document.querySelector('.logo-img');
     if (!logo) return;
     var up = true;
@@ -241,7 +247,103 @@
   /* =====================================================
      10. TIMELINE : glow dynamique sur les points majeurs
   ===================================================== */
+  /* =====================================================
+     11. MENU MOBILE : hamburger + sidebar en tiroir
+  ===================================================== */
+  function initMobileMenu() {
+    var sidebar = document.querySelector('.sidebar');
+    var topbar = document.querySelector('.topbar');
+    if (!sidebar || !topbar) return;
+
+    // Bouton hamburger injecté en tête de topbar
+    var btn = document.createElement('button');
+    btn.className = 'menu-btn';
+    btn.setAttribute('aria-label', 'Ouvrir le menu');
+    btn.innerHTML =
+      '<svg viewBox="0 0 24 24">' +
+      '<line x1="3" y1="6" x2="21" y2="6"/>' +
+      '<line x1="3" y1="12" x2="21" y2="12"/>' +
+      '<line x1="3" y1="18" x2="21" y2="18"/>' +
+      '</svg>';
+    topbar.insertBefore(btn, topbar.firstChild);
+
+    // Voile derrière la sidebar
+    var backdrop = document.createElement('div');
+    backdrop.className = 'sidebar-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openMenu() {
+      sidebar.classList.add('mobile-open');
+      backdrop.classList.add('visible');
+      btn.setAttribute('aria-label', 'Fermer le menu');
+    }
+    function closeMenu() {
+      sidebar.classList.remove('mobile-open');
+      backdrop.classList.remove('visible');
+      btn.setAttribute('aria-label', 'Ouvrir le menu');
+    }
+
+    btn.addEventListener('click', function () {
+      if (sidebar.classList.contains('mobile-open')) closeMenu();
+      else openMenu();
+    });
+    backdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    sidebar.querySelectorAll('.nav-link, .nav-sub').forEach(function (l) {
+      l.addEventListener('click', closeMenu);
+    });
+  }
+
+  /* =====================================================
+     12. BARRE DE PROGRESSION DE LECTURE
+  ===================================================== */
+  function initScrollProgress() {
+    var bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+    function update() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? h.scrollTop / max : 0;
+      bar.style.transform = 'scaleX(' + p + ')';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* =====================================================
+     13. COMPTEURS ANIMÉS (stats de l'accueil)
+     Compte de 0 jusqu'à la valeur, en préservant le suffixe
+  ===================================================== */
+  function initStatCount() {
+    if (REDUCE_MOTION) return;
+    var nums = document.querySelectorAll('.stat-num');
+    nums.forEach(function (el) {
+      var raw = el.textContent.trim();
+      var m = raw.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      var target = parseInt(m[1], 10);
+      var suffix = m[2] || '';
+      var start = null;
+      var dur = 900;
+      el.textContent = '0' + suffix;
+      function tick(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
   function initTimelineGlow() {
+    if (REDUCE_MOTION) return;
     var major = document.querySelectorAll('.event-dot-circle.major');
     major.forEach(function (dot) {
       var phase = Math.random() * Math.PI * 2;
@@ -272,6 +374,9 @@
     initSmoothScroll();
     initTooltips();
     initTimelineGlow();
+    initMobileMenu();
+    initScrollProgress();
+    initStatCount();
   }
 
 })();

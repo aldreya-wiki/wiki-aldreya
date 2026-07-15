@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bibliothèque des légendes — Wiki Aldreya</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -55,7 +55,7 @@
     </div>
 
     <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:1.25rem; align-items:center;">
-      <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">Légende :</span>
+      <span style="font-family:var(--font-mono); font-size:var(--fs-badge); color:var(--text-dim);">Légende :</span>
       <span class="status-badge s-multiple">Plusieurs rencontres</span>
       <span class="status-badge s-rencontres">Une rencontre</span>
       <span class="status-badge s-vu">Aperçu une fois</span>
@@ -63,7 +63,14 @@
       <span class="status-badge s-inconnu">Inconnu</span>
     </div>
 
-    <div class="conn-wrap">
+    <!-- ================================================================
+GUIDE : AJOUTER UNE LIGNE AU TABLEAU DES CONNEXIONS
+Copie une ligne tr existante ci-dessous et adapte les cellules.
+Badges de statut : s-multiple, s-rencontres, s-vu, s-legend, s-inconnu.
+Types : type-leg (légendaire) ou type-fab (fabuleux).
+================================================================ -->
+
+<div class="conn-wrap">
       <table class="conn-table">
         <thead>
           <tr>
@@ -75,25 +82,25 @@
         </thead>
         <tbody>
           <!-- KANTO -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">KANTO</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">KANTO</td></tr>
           <tr><td><span class="poke-name">Artikodin / Electhor / Sulfura</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-vu">Aperçu une fois</span></td><td class="poke-info">Vus une fois à Aldreya. Voir légende "Les Seigneurs du ciel de Kanto".</td></tr>
           <tr><td><span class="poke-name">Mewtwo</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Des rumeurs circuleraient sur son existence, mais aucune information concrète.</td></tr>
           <tr><td><span class="poke-name">Mew</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "L'Ancêtre". Pas de rencontre.</td></tr>
           <!-- JOHTO -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">JOHTO</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">JOHTO</td></tr>
           <tr><td><span class="poke-name">Raikou / Entei / Suicine</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-rencontres">Une rencontre</span></td><td class="poke-info">Voir légende "Les Trois Ressuscités". Pas d'informations concrètes.</td></tr>
           <tr><td><span class="poke-name">Lugia</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-rencontres">Une rencontre</span></td><td class="poke-info">Apparu lors du déchainement de Hoopa. Voir légende "Le Gardien des Profondeurs".</td></tr>
           <tr><td><span class="poke-name">Ho-Oh</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Le Gardien des Profondeurs et L'oiseau Arc-en-Ciel". Pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Celebi</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Le Gardien du Temps Vert". Pas de rencontre.</td></tr>
           <!-- HOENN -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">HOENN</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">HOENN</td></tr>
           <tr><td><span class="poke-name">Regirock / Regice / Registeel</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Les Colosses Scellés". Quelques informations, pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Latios / Latias</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-inconnu">Inconnu</span></td><td class="poke-info">Aucune information disponible.</td></tr>
           <tr><td><span class="poke-name">Kyogre / Groudon / Rayquaza</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Connus dans le monde. Voir légende "Les Titans de Hoenn".</td></tr>
           <tr><td><span class="poke-name">Deoxys</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs rencontres via les Veldraniens. Connaissance de ses différentes formes.</td></tr>
           <tr><td><span class="poke-name">Jirachi</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "L'Exauceur de Vœux". Pas de rencontre.</td></tr>
           <!-- SINNOH -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">SINNOH</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">SINNOH</td></tr>
           <tr><td><span class="poke-name">Créhelf / Créfollet / Créfadet</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Connaissance de leur impact : Le Savoir, Les Émotions, La Volonté.</td></tr>
           <tr><td><span class="poke-name">Dialga / Palkia / Giratina</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-vu">Aperçu une fois</span></td><td class="poke-info">Vus une fois à Aldreya, très peu d'informations. Voir légende "Le Trio de la Création".</td></tr>
           <tr><td><span class="poke-name">Heatran</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Aperçu plusieurs fois à Aldreya, peu d'informations à son sujet.</td></tr>
@@ -104,7 +111,7 @@
           <tr><td><span class="poke-name">Shaymin</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs spécimens vus. Connaissance de son pouvoir : réparer la nature.</td></tr>
           <tr><td><span class="poke-name">Arceus</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "L'Être Originel". Pas de rencontre.</td></tr>
           <!-- UNYS -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">UNYS</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">UNYS</td></tr>
           <tr><td><span class="poke-name">Cobaltium / Terrakium / Viridium</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Les Épées de la Justice". Pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Boéras / Démétéros / Fulguris</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Les Dieux du Vent et de la Foudre". Pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Reshiram / Zekrom</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Connaissance de leur fonction : la Réalité et l'Idéal.</td></tr>
@@ -114,13 +121,13 @@
           <tr><td><span class="poke-name">Meloetta</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs rencontres à Aldreya, peu d'informations.</td></tr>
           <tr><td><span class="poke-name">Genesect</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Ont construit un nid près de Sylvombre. Initialement construits par la Team Galaxy.</td></tr>
           <!-- KALOS -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">KALOS</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">KALOS</td></tr>
           <tr><td><span class="poke-name">Xerneas / Yveltal / Zygarde</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Le Cycle de la vie en Kalos". Pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Diancie</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs apparitions. Une météorite est tombée sur des Strassies et en a transformé deux en Diancie.</td></tr>
           <tr><td><span class="poke-name">Hoopa</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs apparitions dont sous sa forme déchaînée. Lié aux événements d'Harrisson Wilfred. Voir légende "Le Génie aux Anneaux".</td></tr>
           <tr><td><span class="poke-name">Volcanion</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-inconnu">Inconnu</span></td><td class="poke-info">Aucune information disponible.</td></tr>
           <!-- ALOLA -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">ALOLA</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">ALOLA</td></tr>
           <tr><td><span class="poke-name">Tokorico / Tokopiyon / Tokotoro / Tokopisco</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Les Divinités d'Alola". Pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Cosmog / Cosmovum</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Les Enfants des Failles". Pas de rencontre.</td></tr>
           <tr><td><span class="poke-name">Solgaleo / Lunala / Necrozma</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "Les Êtres de lumière et le Pokémon prisme". Pas de rencontre.</td></tr>
@@ -130,7 +137,7 @@
           <tr><td><span class="poke-name">Zeraora</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs rencontres à Aldreya, peu d'informations.</td></tr>
           <tr><td><span class="poke-name">Meltan / Melmetal</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "L'Être d'Acier Antique". Pas de rencontre.</td></tr>
           <!-- GALAR -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">GALAR</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">GALAR</td></tr>
           <tr><td><span class="poke-name">Artikodin / Electhor / Sulfura de Galar</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-inconnu">Inconnu</span></td><td class="poke-info">Aucune information disponible.</td></tr>
           <tr><td><span class="poke-name">Zacian / Zamazenta</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs apparitions à Aldreya. Voir légende "La Nuit sans Fin — Galar".</td></tr>
           <tr><td><span class="poke-name">Ethernatos</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-legend">Légende</span></td><td class="poke-info">Voir légende "La Nuit sans Fin — Galar". Pas de rencontre.</td></tr>
@@ -140,7 +147,7 @@
           <tr><td><span class="poke-name">Amovenus</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-vu">Aperçu une fois</span></td><td class="poke-info">Aperçu plusieurs fois à Aldreya. Voir légende "L'Annonceur du Printemps".</td></tr>
           <tr><td><span class="poke-name">Zarude</span></td><td><span class="poke-type type-fab">Fabuleux</span></td><td><span class="status-badge s-inconnu">Inconnu</span></td><td class="poke-info">Aucune information disponible.</td></tr>
           <!-- PALDEA -->
-          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:9px; color:var(--rift-dim); letter-spacing:0.12em; padding:6px 12px;">PALDEA</td></tr>
+          <tr><td colspan="4" style="background:var(--bg-card2); font-family:var(--font-mono); font-size:var(--fs-label); color:var(--rift-text); letter-spacing:0.10em; padding:6px 12px;">PALDEA</td></tr>
           <tr><td><span class="poke-name">Miraidon</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-multiple">Plusieurs rencontres</span></td><td class="poke-info">Plusieurs rencontres à Aldreya, peu d'informations.</td></tr>
           <tr><td><span class="poke-name">Koraidon</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-inconnu">Inconnu</span></td><td class="poke-info">Aucune information disponible.</td></tr>
           <tr><td><span class="poke-name">Ire-Foudre / Feu-Perçant / Serpent-Eau</span></td><td><span class="poke-type type-leg">Légendaire</span></td><td><span class="status-badge s-vu">Aperçu une fois</span></td><td class="poke-info">Ce ne sont pas de vrais légendaires : créatures puissantes et anciennes, ancêtres de Raikou, Entei et Suicune.</td></tr>
@@ -164,7 +171,32 @@
     </h2>
 
     <div class="region-title">Région de Kanto</div>
-    <div class="legend-card"><div class="legend-header"><div class="legend-name">Les Seigneurs du ciel de Kanto</div><div class="legend-source">Extrait de « Chroniques des Êtres Anciens »</div></div><div class="legend-body"><p>Trois colosses ailés gardent le ciel de Kanto depuis des temps immémoriaux. Le premier, maître de la glace éternelle, habite des cimes inaccessibles, ses ailes, lorsqu'elles battent, engendrent des blizzards capables d'ensevelir des villages. Le second, seigneur de la foudre, réside au cœur des nuages d'orage dont il se nourrit ; chaque éclair déchirant le ciel serait la trace de son passage. Le troisième, roi du feu vif, niche dans les volcans en activité et laisse derrière lui un sillage incandescent visible à des dizaines de kilomètres.</p><p>Les anciens érudits affirment que ces trois esprits ne sont pas indépendants, mais gouvernés par une quatrième entité, une puissance tapie dans les eaux profondes, dont la colère, si elle venait à s'éveiller, précipiterait un conflit capable de dévaster la région.</p></div></div>
+    <!-- ================================================================
+GUIDE : AJOUTER UNE LÉGENDE
+Carte verte (légende propre à Aldreya) :
+<div class="aldreya-card">
+  <div class="aldreya-header">
+    <div class="aldreya-name">Titre de la légende</div>
+    <div class="aldreya-source">Extrait de « Nom de l'ouvrage »</div>
+  </div>
+  <div class="aldreya-body">
+    <p>Texte de la légende.</p>
+  </div>
+</div>
+
+Carte dorée (texte classique ou extérieur) :
+<div class="legend-card">
+  <div class="legend-header">
+    <div class="legend-name">Titre</div>
+    <div class="legend-source">Source du texte</div>
+  </div>
+  <div class="legend-body">
+    <p>Texte.</p>
+  </div>
+</div>
+================================================================ -->
+
+<div class="legend-card"><div class="legend-header"><div class="legend-name">Les Seigneurs du ciel de Kanto</div><div class="legend-source">Extrait de « Chroniques des Êtres Anciens »</div></div><div class="legend-body"><p>Trois colosses ailés gardent le ciel de Kanto depuis des temps immémoriaux. Le premier, maître de la glace éternelle, habite des cimes inaccessibles, ses ailes, lorsqu'elles battent, engendrent des blizzards capables d'ensevelir des villages. Le second, seigneur de la foudre, réside au cœur des nuages d'orage dont il se nourrit ; chaque éclair déchirant le ciel serait la trace de son passage. Le troisième, roi du feu vif, niche dans les volcans en activité et laisse derrière lui un sillage incandescent visible à des dizaines de kilomètres.</p><p>Les anciens érudits affirment que ces trois esprits ne sont pas indépendants, mais gouvernés par une quatrième entité, une puissance tapie dans les eaux profondes, dont la colère, si elle venait à s'éveiller, précipiterait un conflit capable de dévaster la région.</p></div></div>
     <div class="legend-card"><div class="legend-header"><div class="legend-name">L'Ancêtre</div><div class="legend-source">Extrait de « Mémoire du Vivant — Traité de Biologie Mythologique »</div></div><div class="legend-body"><p>Les données génétiques accumulées depuis des décennies pointent vers une conclusion troublante : il existerait un être si ancien et si fondamental que son patrimoine génétique se retrouve, à des degrés divers, dans celui de chaque Pokémon vivant. On le dit minuscule et insaisissable, d'une curiosité enfantine, capable de maîtriser n'importe quelle capacité. Certains chercheurs l'ont cherché toute leur vie sans jamais le trouver. D'autres affirment l'avoir aperçu, une fois, au coin de l'œil avant qu'il ne disparaisse dans l'air comme s'il n'avait jamais existé.</p></div></div>
 
     <div class="region-title">Région de Johto</div>

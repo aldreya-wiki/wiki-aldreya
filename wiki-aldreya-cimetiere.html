@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cimetière — Wiki Aldreya</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 <style>
 .cimetiere-intro { background: var(--bg-card); border: 0.5px solid #2a1f00; border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 2rem; text-align: center; }
-.cimetiere-intro p { font-size: 14px; color: #c0a060; line-height: 1.9; font-style: italic; max-width: 560px; margin: 0 auto; }
+.cimetiere-intro p { font-size: var(--fs-compact); color: #c0a060; line-height: 1.9; font-style: italic; max-width: 560px; margin: 0 auto; }
 
 .category-title { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text); letter-spacing: 0.04em; margin: 2rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 10px; }
 .category-title svg { width: 20px; height: 20px; fill: none; stroke: var(--rift); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
@@ -30,13 +30,13 @@
 .tomb-card.pokemon .tomb-header { border-bottom-color: #0a1f3d; }
 .tomb-card.faction .tomb-header { border-bottom-color: #2a1f00; }
 
-.tomb-name { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: 0.03em; margin-bottom: 4px; }
+.tomb-name { font-family: var(--font-display); font-size: var(--fs-h2); font-weight: 600; color: var(--text); letter-spacing: 0.03em; margin-bottom: 4px; }
 .tomb-card.pokemon .tomb-name { color: #7dd3fc; }
 .tomb-card.faction .tomb-name { color: var(--gold); }
-.tomb-epitaph { font-size: 13px; color: var(--text-muted); line-height: 1.6; font-style: italic; }
+.tomb-epitaph { font-size: var(--fs-meta); color: var(--text-muted); line-height: 1.6; font-style: italic; }
 
 .tomb-body { padding: 1rem 1.25rem; flex: 1; }
-.tomb-body p { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
+.tomb-body p { font-size: var(--fs-body); color: var(--text-muted); line-height: 1.75; margin-bottom: 8px; }
 .tomb-body p:last-child { margin-bottom: 0; }
 .tomb-body strong { color: var(--text); font-weight: 500; }
 
@@ -45,23 +45,32 @@
 .tomb-card.pokemon .tomb-img-wrap { background: #020d1c; }
 .tomb-card.faction .tomb-img-wrap { background: #0e0900; }
 
-.tomb-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; opacity: 0.92; transition: opacity 0.3s ease; }
+.tomb-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; opacity: 0.92; transition: opacity 0.3s ease, transform 0.6s ease; }
+.tomb-card:hover .tomb-img { transform: scale(1.045); opacity: 1; }
 .tomb-card:hover .tomb-img { opacity: 1; }
 
 /* Placeholder si pas d'image */
-.tomb-img-placeholder { width: 100%; height: 100%; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-family: var(--font-mono); font-size: 8px; color: var(--rift-dim); text-align: center; }
+.tomb-img-placeholder { width: 100%; height: 100%; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-family: var(--font-mono); font-size: 8px; color: var(--rift-text); text-align: center; }
 .tomb-card.pokemon .tomb-img-placeholder { color: #1a3a6a; }
 .tomb-card.faction .tomb-img-placeholder { color: #3a2a10; }
 .tomb-img-placeholder svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.5; }
 
-.last-words { border-left: 2px solid var(--rift-dim); background: var(--rift-dark); padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; margin-top: 0.875rem; font-size: 13px; color: #a8d8b8; line-height: 1.7; font-style: italic; }
+.last-words { border-left: 2px solid var(--rift-dim); background: var(--rift-dark); padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; margin-top: 0.875rem; font-size: var(--fs-meta); color: #a8d8b8; line-height: 1.7; font-style: italic; }
 .tomb-card.pokemon .last-words { border-left-color: #1a3a6a; background: #00122a; color: #5ab4ff; }
 .tomb-card.faction .last-words { border-left-color: #3a2a10; background: #1c1200; color: #a07840; }
 
 .faction-members { margin-top: 1rem; }
 .faction-member { display: flex; gap: 10px; margin-bottom: 8px; align-items: flex-start; background: var(--bg-card2); border-radius: 6px; padding: 0.75rem 1rem; }
-.faction-member-name { font-size: 13px; font-weight: 500; color: var(--gold); margin-bottom: 3px; }
-.faction-member-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.faction-member-name { font-size: var(--fs-meta); font-weight: 500; color: var(--gold); margin-bottom: 3px; }
+.faction-member-desc { font-size: var(--fs-fine); color: var(--text-muted); line-height: 1.6; }
+
+/* Responsive : cartes empilées, image en bandeau au-dessus du texte */
+@media (max-width: 700px) {
+  .tomb-card { flex-direction: column; min-height: 0; }
+  .tomb-img-wrap { order: -1; width: 100%; min-width: 0; height: 230px; }
+  .tomb-img { opacity: 1; }
+  .tomb-left { border-right: none; }
+}
 </style>
 </head>
 <body>
@@ -106,7 +115,36 @@
       <p>Certains ont choisi leur fin. D'autres se l'ont vue imposer. Tous ont laissé une trace dans l'histoire d'Aldreya, qu'elle soit lumineuse, sombre, ou quelque part entre les deux.</p>
     </div>
 
-    <!-- HUMAINS -->
+    <!-- ================================================================
+GUIDE : AJOUTER UNE ENTRÉE AU CIMETIÈRE
+Copie le modèle ci-dessous puis colle-le dans la bonne section.
+Humain : laisser class="tomb-card"
+Pokémon : mettre class="tomb-card pokemon"
+Faction : mettre class="tomb-card faction"
+1. Remplace NOM DU DÉFUNT, l'épitaphe et les paragraphes.
+2. Place l'image dans images/ avec un nom en minuscules et
+   tirets simples, exemple : kohaku-nawaki.png
+3. Le bloc last-words est optionnel : supprime-le si inutile.
+
+<div class="tomb-card">
+  <div class="tomb-left">
+    <div class="tomb-header">
+      <div class="tomb-name">NOM DU DÉFUNT</div>
+      <div class="tomb-epitaph">Épitaphe courte affichée en italique.</div>
+    </div>
+    <div class="tomb-body">
+      <p>Premier paragraphe du récit.</p>
+      <p>Deuxième paragraphe si besoin.</p>
+      <div class="last-words">Dernières paroles ou citation.</div>
+    </div>
+  </div>
+  <div class="tomb-img-wrap">
+    <img src="images/nom-du-defunt.png" alt="NOM DU DÉFUNT" class="tomb-img">
+  </div>
+</div>
+================================================================ -->
+
+<!-- HUMAINS -->
     <h2 class="category-title">
       <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       Humains
@@ -258,10 +296,11 @@
           <p>Présent dès les premières heures de la DPPA, Kohaku Nawaki porta l'insigne de l'ordre avec une conviction que peu d'agents eurent à son niveau. Il avait une conception rigide et absolue de la justice, sans place pour les nuances, les compromis ou les arrangements. Pour lui, la loi n'était pas un outil parmi d'autres, c'était un principe.</p>
           <p>Cette intransigeance lui permit de traverser les turbulences qui secouèrent la région, les failles, les factions, les coups de force successifs. Il s'adapta sans jamais renier ses convictions, restant à son poste là où d'autres avaient choisi de partir. Il atteignit le grade de commissaire sous la souveraineté de Flous, continuant à exercer ses fonctions dans une région désormais occupée.</p>
           <p>Il trouva la mort brûlé vif par Alcor Mist. Une fin violente pour un homme qui avait consacré sa vie à empêcher exactement ce genre de chose.</p>
+          <div class="last-words">La justice n'a pas de couleur politique. Elle existe, ou elle n'existe pas.</div>
         </div>
       </div>
       <div class="tomb-img-wrap">
-        <img src="images/kohaku.png" alt="Kohaku Nawaki" class="tomb-img">
+        <img src="images/kohaku-nawaki.png" alt="Kohaku Nawaki" class="tomb-img">
       </div>
     </div>
 
